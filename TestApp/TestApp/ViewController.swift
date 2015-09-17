@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     var people : [Person] = []
     var maxCells : Int = 0
-    var taskCache : URLTaskCache
+    var taskCache : URLTaskCache = URLTaskCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()

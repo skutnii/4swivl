@@ -9,7 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var tableView : UITableView? = nil
+    
+    var people : [Person] = []
+    var maxCells : Int = 0
+    var taskCache : URLTaskCache
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

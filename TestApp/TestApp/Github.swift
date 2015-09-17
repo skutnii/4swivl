@@ -23,6 +23,10 @@ class Github : WebAPI {
     static let USERS_BASE : String = "https://api.github.com/users"
     static let PREVIEW_SIZE : Int = 100
     static let ERROR_DOMAIN = "Github API"
+
+    private static let session : NSURLSession =
+    NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(), delegate:nil,
+        delegateQueue:NSOperationQueue.mainQueue())
     
     static func getUsers(forConsumer consumer: GithubDataConsumer,
         from since: Int = 0, count per_page: Int = 20)  ->  NSURLSessionTask {
@@ -31,7 +35,7 @@ class Github : WebAPI {
             let url: NSURL = NSURL(string: completeLink)!
             let request : NSURLRequest = NSURLRequest(URL: url)
             
-            return doJSONDataRequest(request, dataHandler: {
+            return doJSONDataRequest(session: session, request: request, dataHandler: {
                 [weak consumer]
                 (data: AnyObject?) in
                 
@@ -65,7 +69,7 @@ class Github : WebAPI {
             })
     }
     
-    static func getAvatar(preview: Bool = false, forPerson person: Person)  ->  NSURLSessionTask? {
+    static func getAvatar(preview preview: Bool = false, forPerson person: Person)  ->  NSURLSessionTask? {
         guard let link = person.avatar.link else {
             return nil
         }
@@ -74,7 +78,7 @@ class Github : WebAPI {
 
         let url: NSURL = NSURL(string: completeLink)!
         let request : NSURLRequest = NSURLRequest(URL: url)
-        return doDownload(request: request, handler: {
+        return doDownload(session: session, request: request, handler: {
             [weak person]
             (url: NSURL?) in
             do {
@@ -103,9 +107,9 @@ class Github : WebAPI {
                 }
                 
                 if preview {
-                    person?.avatar.preview = image
+                    person?.avatar.preview[] = image
                 } else {
-                    person?.avatar.fullImage = image
+                    person?.avatar.fullImage[] = image
                 }
             } catch let err as NSError {
                 NSLog(err.localizedDescription)

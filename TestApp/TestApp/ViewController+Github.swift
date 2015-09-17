@@ -19,4 +19,12 @@ extension ViewController : GithubDataConsumer {
        let loader = Github.getUsers(forConsumer: self, from: start, count: count)
        taskCache["LoadUsers(\(start),\(count))"] = loader
     }
+    
+    func requestNextUsers() {
+        let count = ViewController.USER_CHUNK_SIZE
+        maxCells = max(maxCells, people.count) + count
+        requestUsers(start: people.count, count: count)
+
+        tableView?.reloadData()
+    }
 }

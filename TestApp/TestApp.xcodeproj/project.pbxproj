@@ -20,6 +20,10 @@
 		22DE961C1BAAFA0800E26162 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE961B1BAAFA0800E26162 /* WebAPI.swift */; settings = {ASSET_TAGS = (); }; };
 		22DE961E1BAB075400E26162 /* ViewController+Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE961D1BAB075400E26162 /* ViewController+Github.swift */; settings = {ASSET_TAGS = (); }; };
 		22DE96201BAB103400E26162 /* URLTaskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE961F1BAB103400E26162 /* URLTaskCache.swift */; settings = {ASSET_TAGS = (); }; };
+		22DE96221BAB2D8000E26162 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE96211BAB2D8000E26162 /* PersonCell.swift */; settings = {ASSET_TAGS = (); }; };
+		22DE96241BAB4EF700E26162 /* AvatarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE96231BAB4EF700E26162 /* AvatarController.swift */; settings = {ASSET_TAGS = (); }; };
+		22DE96261BAB565900E26162 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE96251BAB565900E26162 /* Observable.swift */; settings = {ASSET_TAGS = (); }; };
+		22DE96281BAB68CB00E26162 /* GenericWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE96271BAB68CB00E26162 /* GenericWrapper.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		22DE961B1BAAFA0800E26162 /* WebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
 		22DE961D1BAB075400E26162 /* ViewController+Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Github.swift"; sourceTree = "<group>"; };
 		22DE961F1BAB103400E26162 /* URLTaskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTaskCache.swift; sourceTree = "<group>"; };
+		22DE96211BAB2D8000E26162 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		22DE96231BAB4EF700E26162 /* AvatarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarController.swift; sourceTree = "<group>"; };
+		22DE96251BAB565900E26162 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		22DE96271BAB68CB00E26162 /* GenericWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,10 @@
 				22DE961B1BAAFA0800E26162 /* WebAPI.swift */,
 				22DE961D1BAB075400E26162 /* ViewController+Github.swift */,
 				22DE961F1BAB103400E26162 /* URLTaskCache.swift */,
+				22DE96211BAB2D8000E26162 /* PersonCell.swift */,
+				22DE96231BAB4EF700E26162 /* AvatarController.swift */,
+				22DE96251BAB565900E26162 /* Observable.swift */,
+				22DE96271BAB68CB00E26162 /* GenericWrapper.swift */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -274,13 +286,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DE96261BAB565900E26162 /* Observable.swift in Sources */,
 				22DE96201BAB103400E26162 /* URLTaskCache.swift in Sources */,
 				226A09DB1BAAABC400B99288 /* ViewController.swift in Sources */,
 				22DE961C1BAAFA0800E26162 /* WebAPI.swift in Sources */,
+				22DE96221BAB2D8000E26162 /* PersonCell.swift in Sources */,
+				22DE96281BAB68CB00E26162 /* GenericWrapper.swift in Sources */,
 				226A09D91BAAABC400B99288 /* AppDelegate.swift in Sources */,
 				22DE961A1BAADFC300E26162 /* Github.swift in Sources */,
 				22DE96161BAAC95E00E26162 /* Person.swift in Sources */,
 				22DE96141BAAC84400E26162 /* ViewController+TableView.swift in Sources */,
+				22DE96241BAB4EF700E26162 /* AvatarController.swift in Sources */,
 				22DE961E1BAB075400E26162 /* ViewController+Github.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

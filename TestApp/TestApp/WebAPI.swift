@@ -10,12 +10,9 @@ import Foundation
 
 class WebAPI {
 
-    private static let session : NSURLSession =
-        NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-    
-    static func doJSONDataRequest(request: NSURLRequest,
+    static func doJSONDataRequest(session session: NSURLSession, request: NSURLRequest,
         dataHandler: (_ : AnyObject?) -> ()) -> NSURLSessionTask {
-         return session.dataTaskWithRequest(request,
+            let task = session.dataTaskWithRequest(request,
             completionHandler:  {
                 (data: NSData?, response: NSURLResponse?, error: NSError?) in
                 do {
@@ -42,11 +39,14 @@ class WebAPI {
                 }
             }
         )
+            
+        task.resume()
+        return task
     }
     
-    static func doDownload(request request: NSURLRequest,
+    static func doDownload(session session: NSURLSession, request: NSURLRequest,
         handler dataHandler: (NSURL?) -> ()) -> NSURLSessionTask {
-        return session.downloadTaskWithRequest(request, completionHandler: {
+        let task = session.downloadTaskWithRequest(request, completionHandler: {
             (location: NSURL?, response: NSURLResponse?, error: NSError?) in
             
             guard nil == error else {
@@ -57,6 +57,9 @@ class WebAPI {
             
             dataHandler(location)
         })
+            
+        task.resume()
+        return task
     }
     
 }

@@ -45,6 +45,8 @@ class URLTaskCache {
         }
         
         get {
+            purge()
+            
             return storage[key]
         }
     }

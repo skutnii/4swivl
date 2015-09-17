@@ -19,19 +19,20 @@ class PersonCell : UITableViewCell {
             person?.avatar.preview.removeObserver(_onAvatarChange)
         }
         didSet {
-            _onAvatarChange = person?.avatar.fullImage.addObserver({
+            _onAvatarChange = person?.avatar.preview.addObserver({
                     [weak self]
                     (from: UIImage?, to: UIImage?, person: AnyObject) in
                     guard person === self?.person else {
                         return
                     }
                 
-                    self?.avatarView?.image = self?.person?.avatar.preview[]
+                    self?.layoutSubviews()
                 })
         }
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         nameLabel?.text = person?.login ?? ""
         profileLabel?.text = person?.profileLink ?? ""
         avatarView?.image = self.person?.avatar.preview[]

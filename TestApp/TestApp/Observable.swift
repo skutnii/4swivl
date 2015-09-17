@@ -51,7 +51,6 @@ class Observable<T, O : AnyObject> : GenericWrapper<T> {
     func addObserver(call: Callback<T, O>.Call) -> Callback<T, O> {
         let callback = Callback<T, O>(call: call, owner: self)
         _callbacks.append(callback)
-        callback._call(nil, self[], _owner)
         return callback
     }
     

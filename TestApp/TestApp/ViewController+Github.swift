@@ -16,8 +16,15 @@ extension ViewController : GithubDataConsumer {
     }
     
     func requestUsers(start start: Int, count: Int) {
-       let loader = Github.getUsers(forConsumer: self, from: start, count: count)
-       taskCache["LoadUsers(\(start),\(count))"] = loader
+        let taskId = "LoadUsers(\(start),\(count))"
+        
+        //No need to add a new task if one is already present, just sit and wait
+        guard nil == taskCache[taskId] else {
+            return
+        }
+        
+        let loader = Github.getUsers(forConsumer: self, from: start, count: count)
+        taskCache[taskId] = loader
     }
     
     func requestNextUsers() {

@@ -113,7 +113,6 @@
 				22E0F8451BAC7EA1001DFB20 /* Utils */,
 				22E0F8441BAC7E7A001DFB20 /* Model */,
 				22E0F8061BAC6582001DFB20 /* AppDelegate.swift */,
-				22E0F8331BAC6662001DFB20 /* URLTaskCache.swift */,
 				22E0F80A1BAC6582001DFB20 /* Main.storyboard */,
 				22E0F80D1BAC6582001DFB20 /* Assets.xcassets */,
 				22E0F80F1BAC6582001DFB20 /* LaunchScreen.storyboard */,
@@ -144,6 +143,7 @@
 		22E0F8451BAC7EA1001DFB20 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				22E0F8331BAC6662001DFB20 /* URLTaskCache.swift */,
 				22E0F8291BAC6662001DFB20 /* GenericWrapper.swift */,
 				22E0F82A1BAC6662001DFB20 /* Geometry.swift */,
 				22E0F82C1BAC6662001DFB20 /* Observable.swift */,
